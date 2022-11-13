@@ -15,7 +15,7 @@ public class SystemPropertiesScanTask extends Properties {
   @Value("${spring.config.location}")
   private String propertyFile;
 
-  @Scheduled(fixedDelay = 1000)
+  // @Scheduled(fixedDelay = 1000)
   void loadProperties() {
     try {
       load(new FileReader(propertyFile));

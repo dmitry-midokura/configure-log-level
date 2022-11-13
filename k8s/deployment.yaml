@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  labels:
+    app: log-configure
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: log-configure
+  template:
+    metadata:
+      labels:
+        app: log-configure
+    spec:
+      containers:
+        - name: log-configure
+          image: log-level-demo:0.0.1-SNAPSHOT
+          env:
+            - name: LOG_LEVELS_PATH
+              value: /config
+          volumeMounts:
+            - name: config
+              mountPath: "/config"
+              readOnly: true
+      volumes:
+        - name: config
+          configMap:
+            name: log-configure-demo
+            items:
+              - key: "log-levels.xml"
+                path: "log-levels.xml"

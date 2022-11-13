@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-configure-demo
+data:
+  log-levels.xml: |
+    <included>
+      <property name="APPLICATION_LOG_LEVEL" value="info"/>
+      <property name="ROOT_LOG_LEVEL" value="info"/>
+    </included>

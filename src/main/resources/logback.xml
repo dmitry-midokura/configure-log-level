@@ -10,5 +10,4 @@
     <appender-ref ref="STDOUT" />
   </root>
   <logger name="org.dmitry.example" level="${APPLICATION_LOG_LEVEL:-info}"/>
-  <logger name="org.dmitry.example.logleveldemo.SystemPropertiesScanTask" level="debug"/>
 </configuration>

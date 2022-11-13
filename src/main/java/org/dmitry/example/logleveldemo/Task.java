@@ -1,5 +1,6 @@
 package org.dmitry.example.logleveldemo;
 
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.Properties;
 import org.slf4j.Logger;
@@ -21,10 +22,10 @@ public class Task extends Properties {
     log.debug("Logger level is >= debug");
   }
 
-  @Scheduled(fixedDelay = 10_00)
+  // @Scheduled(fixedDelay = 10_00)
   void loadProperties() {
     try {
-      load(new FileReader(propertyFile));
+      loadFromXML(new FileInputStream(propertyFile));
       log.debug("Loaded properties file with {} properties", entrySet().size());
       for (var entries: entrySet()) {
         log.debug("Setting {} to value {}", entries.getKey(), entries.getValue());

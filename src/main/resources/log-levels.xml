@@ -1,0 +1,4 @@
+<included>
+  <property name="APPLICATION_LOG_LEVEL" value="info" />
+  <property name="ROOT_LOG_LEVEL" value="info" />
+</included>

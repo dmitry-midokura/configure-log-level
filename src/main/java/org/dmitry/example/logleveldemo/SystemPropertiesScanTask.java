@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SystemPropertiesScanTask extends Properties {
   private static final Logger log = LoggerFactory.getLogger(SystemPropertiesScanTask.class);
-  @Value("${spring.config.location}")
   private String propertyFile;
 
   // @Scheduled(fixedDelay = 1000)

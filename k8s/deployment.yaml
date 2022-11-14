@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: demo-deployment
   labels:
     app: log-configure
 spec:
   replicas: 2
+  serviceName: demo-service
   selector:
     matchLabels:
       app: log-configure
